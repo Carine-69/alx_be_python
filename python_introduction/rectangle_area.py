@@ -1,4 +1,4 @@
 length = 10
 width = 5
-area =  length * width
-print(f"The ares of the rectngle is: {area}")
+area = length * width
+print(f"The area of the rectngle is: {area}")
