@@ -5,16 +5,16 @@ operation = input("Choose the operation (+, -, *, /): ")
 match operation:
     case "+":
         result = num1 + num2
-        print(f"he result is {result}.") 
+        print(f"The result is {result}.") 
 
     case "-":
         result = num1 - num2
-        print(f"he result is {result}.")
+        print(f"The result is {result}.")
 
     case "*":
         result = num1 *num2
-        print(f"he result is {result}.")
+        print(f"The result is {result}.")
 
     case "/":
         result = num1 / num2 
-        print(f"he result is {result}.")
+        print(f"The result is {result}.")
