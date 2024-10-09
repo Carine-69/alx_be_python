@@ -24,8 +24,8 @@ book1 = Book("1984", "George Orwell", 1949)
 # Printing the string representation of the book
 print(book1)  # Output: '1984' by George Orwell, published in 1949
 
-# Printing the official representation of the book
+# # Printing the official representation of the book
 print(repr(book1))  # Output: Book('1984', 'George Orwell', 1949)
-
-# Deleting the instance
+#
+# # Deleting the instance
 del book1
