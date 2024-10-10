@@ -6,12 +6,6 @@ class Book:
         self.year = year
         self.deleted = False
 
-    def __del__(self):
-        """Destructor to print a message when the Book object is deleted."""
-        if not self.deleted:
-            print(f"Deleting {self.title}")
-            self.deleted = True
-
     def __str__(self):
         """String representation of the Book instance."""
         return f"{self.title} by {self.author}, published in {self.year}"
@@ -19,6 +13,12 @@ class Book:
     def __repr__(self):
         """Official representation of the Book instance."""
         return f"Book('{self.title}', '{self.author}', {self.year})"
+    
+    def __del__(self):
+        """Destructor to print a message when the Book object is deleted."""
+        if not self.deleted:
+            print(f"Deleting {self.title}")
+            self.deleted = True
 
 
 # Creating an instance of the Book class
