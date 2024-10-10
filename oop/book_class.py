@@ -4,10 +4,13 @@ class Book:
         self.title = title
         self.author = author
         self.year = year
+        self.deleted = False
 
     def __del__(self):
         """Destructor to print a message when the Book object is deleted."""
-        print(f"Deleting {self.title}")
+        if not self.deleted:
+            print(f"Deleting {self.title}")
+            self.deleted = True
 
     def __str__(self):
         """String representation of the Book instance."""
@@ -24,8 +27,8 @@ book1 = Book("1984", "George Orwell", 1949)
 # Printing the string representation of the book
 print(book1)  # Output: '1984' by George Orwell, published in 1949
 
-# # Printing the official representation of the book
+# Printing the official representation of the book
 print(repr(book1))  # Output: Book('1984', 'George Orwell', 1949)
-#
+
 # # Deleting the instance
-del book1
+# del book1
