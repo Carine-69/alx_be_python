@@ -1,34 +1,34 @@
+# book_class.py
+
 class Book:
     def __init__(self, title, author, year):
-        """Constructor to initialize the Book instance."""
+        """Constructor method to initialize the Book instance."""
         self.title = title
         self.author = author
         self.year = year
-        self.deleted = False
+
+    def __del__(self):
+        """Destructor method that is called when the object is deleted."""
+        print(f"Deleting {self.title}")
 
     def __str__(self):
-        """String representation of the Book instance."""
+        """String representation of the Book object."""
         return f"{self.title} by {self.author}, published in {self.year}"
 
     def __repr__(self):
-        """Official representation of the Book instance."""
+        """Official representation of the Book object."""
         return f"Book('{self.title}', '{self.author}', {self.year})"
-    
-    def __del__(self):
-        """Destructor to print a message when the Book object is deleted."""
-        if not self.deleted:
-            print(f"Deleting {self.title}")
-            self.deleted = True
 
+# Testing the Book class
+if __name__ == "__main__":
+    # Creating an instance of Book
+    my_book = Book("1984", "George Orwell", 1949)
 
-# Creating an instance of the Book class
-book1 = Book("1984", "George Orwell", 1949)
+    # Demonstrating the __str__ method
+    print(my_book)  # Expected to use __str__
 
-# Printing the string representation of the book
-print(book1)  # Output: '1984' by George Orwell, published in 1949
+    # Demonstrating the __repr__ method
+    print(repr(my_book))  # Expected to use __repr__
 
-# Printing the official representation of the book
-print(repr(book1))  # Output: Book('1984', 'George Orwell', 1949)
-
-# # Deleting the instance
-# del book1
+    # Deleting a book instance to trigger __del__
+    del my_book
